@@ -28,9 +28,9 @@ Comportamiento:
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, char *ori, size_t size);
+size_t	ft_strlcat(char *dst, const char *ori, size_t size);
 
-size_t	ft_strlcat(char *dst, char *ori, size_t size)
+size_t	ft_strlcat(char *dst, const char *ori, size_t size)
 {
 	size_t	dst_len;
 	size_t	ori_len;
