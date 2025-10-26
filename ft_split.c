@@ -32,6 +32,7 @@ Comportamiento:
 	- si no devolver destino.
 
 */
+
 #include "libft.h"
 
 char		**ft_split(char const *s, char c);
@@ -60,7 +61,7 @@ static int	ft_newstr(char ***dest, char const *str, char c)
 		while ((str[i] != c) && (str[i] != '\0'))
 			i++;
 	}
-	*dest = (char **) malloc(sizeof(char *) * (count + 1));
+	*dest = (char **) ft_calloc((count + 1), sizeof(char *));
 	if (*dest == NULL)
 		return (-1);
 	(*dest)[count] = NULL;
@@ -103,9 +104,13 @@ static void	ft_split_free(char ***dest)
 	int	i;
 
 	i = 0;
-	while (dest[i])
-		free(dest[i]);
-	free(dest);
+	while ((*dest)[i])
+	{
+		free((*dest)[i]);
+		i++;
+	}
+	free(*dest);
+	*dest = NULL;
 	return ;
 }
 
