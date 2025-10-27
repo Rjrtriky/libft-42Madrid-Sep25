@@ -93,13 +93,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	if (s1 == NULL)
-		return (ft_strdup(""));
+		return (ft_calloc(1, (sizeof(char))));
 	if (set == NULL)
-		return (ft_strdup(s1));
+		return ((char *)s1);
 	front = ft_strtrim_front(s1, set);
 	back = ft_strtrim_back(s1, set);
 	if (front > back)
-		return (malloc(0));
+		return (ft_calloc(1, (sizeof(char))));
 	else
 	{
 		str = ft_substr(s1, front, back - front + 1);
@@ -108,3 +108,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (str);
 	}
 }
+
