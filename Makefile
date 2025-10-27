@@ -40,7 +40,6 @@ INCLUDE = libft.h
 # ============================================================================== 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-RM = rm -rf
 
 # ==============================================================================
 #	FILE CONVERSION
@@ -76,6 +75,9 @@ all: ${NAME}
 #		clean  - objects files
 #		fclean - objects files and librery
 #		re     - compile everything again
+#			rm = remove
+#				-r = recursive (recursively removes directories and their contents)
+#				-f = force (forces removal without prompting)
 clean:
 	rm -f ${OBJS} ${OBJS_BONUS}
 
