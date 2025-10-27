@@ -38,7 +38,7 @@ INCLUDE = libft.h
 # ==============================================================================
 #	COMPILER CONFIGURATION
 # ============================================================================== 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
@@ -52,7 +52,6 @@ OBJS_BONUS = $(BONUS:.c=.o)
 #	LIBRARY CREATION
 # ==============================================================================
 ${NAME}: ${OBJS}
-	${CC} ${CFLAGS} -c ${ALL}
 	@ar crs ${NAME} ${OBJS}
 
 bonus: $(OBJS) $(OBJS_BONUS)
@@ -70,6 +69,7 @@ all: ${NAME}
 #		$@ - output file (.o)
 #		$< - input file (.c)
 %.o : %.c
+#	Compile command
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 #	Cleaning rules
