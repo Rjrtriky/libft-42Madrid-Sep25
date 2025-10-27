@@ -35,8 +35,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	*dest;
+	unsigned int		i;
+	char				*dest;
 
 	if (s == NULL || f == NULL)
 		return (NULL);
@@ -52,3 +52,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	dest[i] = '\0';
 	return (dest);
 }
+
